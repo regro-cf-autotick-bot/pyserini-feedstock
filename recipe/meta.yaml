@@ -1,5 +1,5 @@
 {% set name = "pyserini" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyserini-{{ version }}.tar.gz
-  sha256: 5388fac0a7c15122b6c7351df9a7c9648397f03e0ec0f131b74d9650ce00e840
+  sha256: 6a6a74851dcc76733bc66c6ec6e05977a8d9668378f5dbcdd89cfcabf47b0d8b
 
 build:
   skip: true  # [py<310 or py>311]
@@ -25,6 +25,8 @@ requirements:
     - pip
     - setuptools
   run:
+    - fastapi >=0.70.0
+    - uvicorn >=0.13.0
     - faiss >1.7.0
     - flask >3.0
     - pytorch >=2.4.0
