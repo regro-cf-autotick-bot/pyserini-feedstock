@@ -1,5 +1,5 @@
 {% set name = "pyserini" %}
-{% set version = "1.4.0" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyserini-{{ version }}.tar.gz
-  sha256: 9a8cf07fc8bdcf50942e42ed69a9a569da60709e14e1aabb5461464a54116459
+  sha256: 384fb783c52ac1605caabe8a75f520323dfed2b5595072911c87f6cfca8bf15f
 
 build:
   skip: true  # [py<=310 or py>311]
@@ -26,35 +26,35 @@ requirements:
     - setuptools
   run:
     - datasets
-    - fastmcp >=2.10.4
+    - fastmcp >=2.14
     - matplotlib-base
-    - fastapi >=0.70.0
+    - fastapi >=0.124
     - mcp >=1.9.4
-    - uvicorn >=0.13.0
+    - uvicorn >=0.38
     - faiss >1.7.0
-    - flask >3.0
-    - pytorch >=2.4.0
+    - flask
+    - pytorch >=2.9
     - requests
     - python
     - cython >=0.29.21
     - cython-blis <1
-    - numpy >=1.18.1
-    - pandas >=1.4.0
-    - pyjnius >=1.6.0
-    - scikit-learn >=0.22.1
-    - scipy >=1.4.1
+    - numpy >=2
+    - pandas
+    - pyjnius >=1.7.0
+    - scikit-learn
+    - scipy
     - tqdm
-    - transformers >=4.6.0
+    - transformers >=5,<6
     - sentencepiece >=0.2
     - nmslib >=2.0.6
-    - onnxruntime >=1.8.1
+    - onnxruntime >=1.23
     - lightgbm >=3.3.2
     - spacy >=3.2.1
     - pyyaml
-    - openai >=1.0.0
-    - tiktoken >=0.4.0
+    - openai >=2.12.0
+    - tiktoken >=0.12
     - pyarrow >=15.0.0
-    - pillow >=10.2.0
+    - pillow >=12
     - pybind11 >=2.11.0
 
 test:
